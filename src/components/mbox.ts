@@ -1,4 +1,4 @@
-import { MBoxOption, MDiv } from "../base/mdiv";
+import { MBoxOption, MDiv } from "../base/m-div";
 
 export class MBox extends MDiv {
   constructor(id?: string, option?: MBoxOption) {

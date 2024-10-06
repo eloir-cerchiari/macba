@@ -1,5 +1,5 @@
-import { MAppendableInterface } from "./mAppendableInterface";
-import { MObject } from "./mobject";
+import { MAppendableInterface } from "./m-appendable-interface";
+import { MObject } from "./m-object";
 
 export class MUlList extends MObject {
   constructor(id?: string) {

@@ -6,6 +6,13 @@ body{
 	margin: 0;
 	padding: 0;
 }
+ 
+html{
+	font-size: 12px;
+}
+#app{
+	width: 100%;
+}
 
 
 h1{
@@ -87,6 +94,118 @@ p{
 	border-bottom: 1px solid #ccc;
 }
 
-#app{
-	width: 100%;
+
+/* Estilo base para o container do input e label */
+.m-text-input-label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0;
+	margin: 1.4rem 1rem;
+}
+
+/* Estilo base para o input */
+.m-text-input-label input[type="text"] {
+    font-size: 1.34rem;
+    padding: 0.88rem 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    transition: border-color 0.3s;
+}
+
+
+/* Estilo para o input em foco */
+.m-text-input-label input[type="text"]:focus {
+    outline: none;
+    border: 1px solid #666;
+	margin: 0;
+
+}
+
+/* Estilo base para o label */
+.m-text-input-label label {
+    position: absolute;
+    top: -1.58rem;
+	font-size: 1.34rem;
+	margin: 0.9rem 0rem;
+    left: 0.6rem;
+    transform: translateY(100%);
+    background-color: white;
+    padding: 0 0.3rem;
+    transition: all 0.3s;
+    pointer-events: none;
+	color: #a1a1a1;
+}
+
+/* Estilo para o label quando o input está preenchido ou em foco */
+.m-text-input-label input:focus + label, input:not(:placeholder-shown) + label {
+    top: -1.9rem;
+    left: 0.5rem;
+    font-size: 1rem;
+    color: #666;
+	margin: 0;
+}
+
+/* 
+.m-switch{
+}
+
+.m-switch-input{
+} */
+
+/* estilo para o switch estilo material design */
+
+.m-switch-input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	position: relative;
+	color: darkgray;
+	font-size: inherit;
+	width: 5rem;
+	height: 2.5rem;
+	box-sizing: content-box;
+	border: 1px solid;
+	border-radius: 1.5rem;
+	vertical-align: text-bottom;
+	margin: auto;
+	background-color: lightgray;
+
+}
+.m-switch-input::before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(0, -50%);
+	box-sizing: border-box;
+	width: 2.3rem;
+	height: 2.3rem;
+	margin-left: 0.15rem;
+	border: 1px solid ;
+	border-radius: 50%;
+	background: currentcolor;
+
+	transition: left 0.2s;
+}
+.m-switch-input:checked::before {
+	left: 2.42rem;
+	background-color: white;
+}
+.m-switch-input:checked{
+	background-color: blue;
+}
+
+
+.m-cb-lbl {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+	justify-content: start;
+	/* center flex */
+
+	align-items: center;
+	gap: 1rem;
+    padding: 0rem 0;
+	margin: 1.4rem 1rem;
 }

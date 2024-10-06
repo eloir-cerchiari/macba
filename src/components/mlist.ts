@@ -1,5 +1,5 @@
 import { MLiList, MUlList } from "../base/m-ul-li-list";
-import { MObject } from "../base/mobject";
+import { MObject } from "../base/m-object";
 
 export function mList(id?: string) {
   return new MList(id);

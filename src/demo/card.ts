@@ -1,23 +1,30 @@
-import { MObject } from "../base/mobject";
+import { MObject } from "../base/m-object";
 import { mCard } from "../components/mcard";
 import { mText } from "../core/mtext";
-import { Signal } from "../core/signal";
+import { effect, Signal } from "../core/signal";
 
 export function demoCard(
   app: HTMLDivElement,
-  name: Signal<string>,
-  cardContentMText: () => MObject,
+  nameInput$: Signal<string>,
+  counterInput$: Signal<string>,
   length: number
 ) {
+  const cardContent = mText("Card Content");
+
+  effect(() => {
+    const text = `Hello, ${nameInput$()} ${counterInput$()} !`;
+    cardContent.update(text);
+  });
+
   for (let i = 0; i < length; i++) {
     const card = mCard("card");
 
     card
       .title("Card Title")
-      .content(cardContentMText().clone())
+      .content(cardContent().clone())
       .footer(mText("Card Footer")());
 
-    card.title(name());
+    card.title(nameInput$());
     app.appendChild(card.getElement());
   }
 }

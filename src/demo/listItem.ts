@@ -14,12 +14,11 @@ const dataItems = [
   "Item 10",
 ];
 
-export function demoListItem(): MList {
+export function demoListItem(app: HTMLDivElement): MList {
   const mlist = mList("list");
 
   dataItems.forEach((item) => {
     mlist.addItem(mText(item)());
   });
-
-  return mlist;
+  app.appendChild(mlist.getElement());
 }

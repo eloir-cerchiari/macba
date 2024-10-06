@@ -1,4 +1,4 @@
-import { MObject } from "../base/mobject";
+import { MObject } from "../base/m-object";
 
 export enum mTextType {
   h1 = "h1",

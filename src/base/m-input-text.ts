@@ -1,9 +1,10 @@
-import { MObject } from "../base/mobject";
-import { effect, Signal } from "./signal";
+import { MObject } from "./m-object";
+import { Signal, effect } from "../core/signal";
 
-export class MInput extends MObject {
+export class MInputText extends MObject {
   constructor(id?: string) {
     super("input", id);
+    this.getElement().setAttribute("type", "text");
   }
 
   setSignal(sig: Signal<string>) {

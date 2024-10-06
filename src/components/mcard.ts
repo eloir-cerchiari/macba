@@ -1,5 +1,5 @@
-import { MAppendableInterface } from "../base/mAppendableInterface";
-import { MObject } from "../base/mobject";
+import { MAppendableInterface } from "../base/m-appendable-interface";
+import { MObject } from "../base/m-object";
 import { mText, mTextType } from "../core/mtext";
 import { MBox } from "./mbox";
 
