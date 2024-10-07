@@ -209,3 +209,61 @@ p{
     padding: 0rem 0;
 	margin: 1.4rem 1rem;
 }
+
+
+
+
+
+
+
+
+/* Estilo base para o container do input e label */
+.m-select-lbl {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0;
+	margin: 1.4rem 1rem;
+}
+
+/* Estilo base para o input */
+.m-select-lbl-select {
+    font-size: 1.34rem;
+    padding: 0.88rem 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    transition: border-color 0.3s;
+}
+
+
+/* Estilo para o input em foco */
+.m-select-lbl-select:focus {
+    outline: none;
+    border: 1px solid #666;
+	margin: 0;
+
+}
+
+/* Estilo base para o label */
+.m-select-lbl-label {
+    position: absolute;
+    top: -1.58rem;
+	font-size: 1.34rem;
+	margin: 0.9rem 0rem;
+    left: 0.6rem;
+    transform: translateY(100%);
+    background-color: white;
+    padding: 0 0.3rem;
+    transition: all 0.3s;
+    pointer-events: none;
+	color: #a1a1a1;
+}
+
+/* Estilo para o label quando o input está preenchido ou em foco */
+.m-select-lbl select:focus + label, select:not(:placeholder-shown) + label {
+    top: -1.9rem;
+    left: 0.5rem;
+    font-size: 1rem;
+    color: #666;
+	margin: 0;
+}
