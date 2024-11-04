@@ -1,8 +1,8 @@
-import { MAppendableInterface } from "../base/m-appendable-interface";
-import { MLabel } from "../base/m-label";
-import { MSelect, MSelectOption } from "../base/m-select";
-import { Signal } from "../core/signal";
-import { MBox } from "./mbox";
+import { MAppendableInterface } from "../../base/m-appendable-interface";
+import { MLabel } from "../../base/m-label";
+import { MSelect, MSelectOption } from "../../base/m-select";
+import { Signal } from "../../core/signal";
+import { MBox } from "../m-box";
 
 export function mSelectLabel({
   label,

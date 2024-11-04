@@ -1,28 +1,36 @@
-import { signal } from "./core/signal.ts";
-import { demoTwoWay } from "./demo/input.ts";
-import { demoTwoWayTextInputLabel } from "./demo/demo-minput-label.ts";
-import { demoForm } from "./demo/demo-form.ts";
-import { demoMSelect } from "./demo/demo-m-select.ts";
+import { MRouter } from "./base/m-router.ts";
+import { demoPage } from "./demo/demo-page.ts";
+import { demoListItem } from "./demo/listItem.ts";
 
-const name = signal("Eloir");
-const sigInput = signal("22");
-name.set("Eloir Jr.");
 const app = document.getElementById("app") as HTMLDivElement;
-// demoCard(app, name, sigInput, 3);
-// demoListItem(app);
-// demoBox(app, name);
-demoTwoWay(app);
 
-demoTwoWayTextInputLabel(app);
-
-demoForm(app);
-
-demoMSelect(app);
-
-setInterval(() => {
-  name.set("Eloir Sr. " + Date.now());
-}, 1000);
-
-setInterval(() => {
-  sigInput.set(Date.now().toString());
-}, 5000);
+const demoChildRoutes = [
+  {
+    path: "/demo/item1",
+    component: demoListItem(app),
+  },
+  {
+    path: "/demo/item2",
+    component: demoListItem(app),
+  },
+];
+new MRouter(app, [
+  {
+    path: "/",
+    name: "home",
+    component: demoListItem(app),
+    childRoutes: demoChildRoutes,
+  },
+  {
+    path: "/demo2",
+    name: "demo2",
+    component: demoPage(app),
+    childRoutes: demoChildRoutes,
+  },
+  {
+    path: "/demo/{teste}",
+    name: "demo",
+    component: demoPage(app),
+    childRoutes: demoChildRoutes,
+  },
+]).route();

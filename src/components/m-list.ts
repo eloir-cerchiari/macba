@@ -1,11 +1,12 @@
 import { MLiList, MUlList } from "../base/m-ul-li-list";
 import { MObject } from "../base/m-object";
+import { MAppendableInterface } from "../base/m-appendable-interface";
 
 export function mList(id?: string) {
   return new MList(id);
 }
 
-export class MList {
+export class MList implements MAppendableInterface {
   _ul: MUlList;
 
   constructor(id?: string) {

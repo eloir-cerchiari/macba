@@ -1,4 +1,4 @@
-import { mSwitch } from "../components/m-switch";
+import { mSwitch } from "../components/form/m-switch";
 import { signal } from "../core/signal";
 import { demoText } from "./text";
 

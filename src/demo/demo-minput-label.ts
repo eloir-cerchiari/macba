@@ -1,4 +1,4 @@
-import { MTextInputLabel } from "../components/mtext-input-label";
+import { MTextInputLabel } from "../components/form/mtext-input-label";
 import { signal } from "../core/signal";
 import { demoText } from "./text";
 

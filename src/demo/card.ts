@@ -1,6 +1,6 @@
 import { MObject } from "../base/m-object";
-import { mCard } from "../components/mcard";
-import { mText } from "../core/mtext";
+import { mCard } from "../components/m-card";
+import { mStaticText } from "../core/mtext";
 import { effect, Signal } from "../core/signal";
 
 export function demoCard(
@@ -9,7 +9,7 @@ export function demoCard(
   counterInput$: Signal<string>,
   length: number
 ) {
-  const cardContent = mText("Card Content");
+  const cardContent = mStaticText("Card Content");
 
   effect(() => {
     const text = `Hello, ${nameInput$()} ${counterInput$()} !`;
@@ -22,7 +22,7 @@ export function demoCard(
     card
       .title("Card Title")
       .content(cardContent().clone())
-      .footer(mText("Card Footer")());
+      .footer(mStaticText("Card Footer")());
 
     card.title(nameInput$());
     app.appendChild(card.getElement());

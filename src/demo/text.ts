@@ -1,8 +1,8 @@
-import { mText } from "../core/mtext";
+import { mStaticText } from "../core/mtext";
 import { effect } from "../core/signal";
 
 export function demoText(app: HTMLDivElement, sigText: Signal<string>) {
-  const text = mText("Text");
+  const text = mStaticText("Text");
   effect(() => {
     text.update(sigText());
   });

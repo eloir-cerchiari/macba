@@ -33,10 +33,42 @@ export class MDiv extends MObject implements MAppendableInterface {
     return this.element;
   }
 
-  appendChild(child: HTMLElement | MObject) {
-    const childElement = child instanceof MObject ? child.element : child;
+  appendOnTop(child: HTMLElement | MObject | MAppendableInterface) {
+    const firstChild = this.element.firstChild;
+    if (!firstChild) {
+      return this.appendChild(child);
+    }
+    if (child instanceof MObject) {
+      this.element.insertBefore(child.element, firstChild);
+      return;
+    }
 
-    this.element.appendChild(childElement);
+    if (child instanceof HTMLElement) {
+      this.element.insertBefore(child, firstChild);
+      return;
+    }
+
+    if (child.getElement) {
+      this.element.insertBefore(child.getElement(), firstChild);
+      return;
+    }
+  }
+
+  appendChild(child: HTMLElement | MObject | MAppendableInterface) {
+    if (child instanceof MObject) {
+      this.element.appendChild(child.element);
+      return;
+    }
+
+    if (child instanceof HTMLElement) {
+      this.element.appendChild(child);
+      return;
+    }
+
+    if (child.getElement) {
+      this.element.appendChild(child.getElement());
+      return;
+    }
   }
 
   setChild(child: HTMLElement | MObject) {

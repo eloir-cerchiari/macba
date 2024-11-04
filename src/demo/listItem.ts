@@ -1,5 +1,5 @@
-import { mList, MList } from "../components/mlist";
-import { mText } from "../core/mtext";
+import { mList, MList } from "../components/m-list";
+import { mStaticText } from "../core/mtext";
 
 const dataItems = [
   "Item 1",
@@ -18,7 +18,8 @@ export function demoListItem(app: HTMLDivElement): MList {
   const mlist = mList("list");
 
   dataItems.forEach((item) => {
-    mlist.addItem(mText(item)());
+    mlist.addItem(mStaticText(item)());
   });
-  app.appendChild(mlist.getElement());
+  return mlist;
+  // app.appendChild(mlist.getElement());
 }

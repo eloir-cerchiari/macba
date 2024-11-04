@@ -1,6 +1,5 @@
 import { idGenerator } from "../utils/id-generator";
 
-// wrap div in a class
 export class MObject {
   element: HTMLElement | HTMLInputElement;
   subscribers: Set<MObject> = new Set();

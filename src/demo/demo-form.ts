@@ -1,17 +1,19 @@
-import { mCheckBoxLabel } from "../components/m-checkbox-label";
-import { mSelectLabel, MSelectLabel } from "../components/m-select-label";
-import { MTextInputLabel } from "../components/mtext-input-label";
-import { effect, signal } from "../core/signal";
-import { demoSwitch } from "./demo-switch";
+import { mCheckBoxLabel } from "../components/form/m-checkbox-label";
+import { mSelectLabel, MSelectLabel } from "../components/form/m-select-label";
+import { MTextInputLabel } from "../components/form/mtext-input-label";
+import { mBox } from "../components/m-box";
+import { signal } from "../core/signal";
 
-export function demoForm(app: HTMLDivElement) {
-  const oneSignal = signal("");
+export function demoForm() {
+  const box = mBox();
+  const oneSignal = signal("as");
   const mTextInputLabel1 = new MTextInputLabel("Nome", oneSignal);
   const mTextInputLabel2 = new MTextInputLabel("Nome", oneSignal);
   const mTextInputLabel3 = new MTextInputLabel("Nome", oneSignal);
 
-  const mcbLabel = mCheckBoxLabel("Aceito os termos", signal(false));
-  const mcbLabel2 = mCheckBoxLabel("Aceito os termos", signal(false));
+  const cbLblValue = signal(false);
+  const mcbLabel = mCheckBoxLabel("Aceito os termos", cbLblValue);
+  const mcbLabel2 = mCheckBoxLabel("Aceito os termos", cbLblValue);
 
   const options = [
     { value: "", text: "" },
@@ -26,16 +28,11 @@ export function demoForm(app: HTMLDivElement) {
     options,
   });
 
-  effect(() => {
-    console.log("value", sig());
-  });
-
-  app.appendChild(mTextInputLabel1.getElement());
-  app.appendChild(mTextInputLabel2.getElement());
-  app.appendChild(mTextInputLabel3.getElement());
-  app.appendChild(mcbLabel.getElement());
-  app.appendChild(mcbLabel2.getElement());
-  app.appendChild(selectLabel.getElement());
-
-  demoSwitch(app);
+  box.appendChild(mTextInputLabel1.getElement());
+  box.appendChild(mTextInputLabel2.getElement());
+  box.appendChild(mTextInputLabel3.getElement());
+  box.appendChild(mcbLabel.getElement());
+  box.appendChild(mcbLabel2.getElement());
+  box.appendChild(selectLabel.getElement());
+  return box;
 }

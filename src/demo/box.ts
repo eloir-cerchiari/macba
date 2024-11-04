@@ -1,5 +1,5 @@
-import { MBox } from "../components/mbox.ts";
-import { mText } from "../core/mtext.ts";
+import { MBox } from "../components/m-box.ts";
+import { mStaticText } from "../core/mtext.ts";
 import { effect, Signal } from "../core/signal";
 
 export function demoBox(app: HTMLDivElement, signalUpdates: Signal<string>) {
@@ -21,7 +21,7 @@ export function demoBox(app: HTMLDivElement, signalUpdates: Signal<string>) {
   effect(() => {
     const text = `Hello, ${signalUpdates()} !`;
 
-    box.setChild(mText(text)());
+    box.setChild(mStaticText(text)());
   });
 
   app.appendChild(box.getElement());

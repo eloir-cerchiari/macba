@@ -1,7 +1,7 @@
-import { MAppendableInterface } from "../base/m-appendable-interface";
-import { MInputCheckbox } from "../base/m-input-checkbox";
-import { Signal } from "../core/signal";
-import { MBox } from "./mbox";
+import { MAppendableInterface } from "../../base/m-appendable-interface";
+import { MInputCheckbox } from "../../base/m-input-checkbox";
+import { Signal } from "../../core/signal";
+import { MBox } from "../m-box";
 
 export function mSwitch(sigValue: Signal<boolean>, id?: string): MSwitch {
   return new MSwitch(sigValue, id);

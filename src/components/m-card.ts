@@ -1,7 +1,7 @@
 import { MAppendableInterface } from "../base/m-appendable-interface";
 import { MObject } from "../base/m-object";
-import { mText, mTextType } from "../core/mtext";
-import { MBox } from "./mbox";
+import { mStaticText, mTextType } from "../core/mtext";
+import { MBox } from "./m-box";
 
 export function mCard(id?: string) {
   return new MCard(id);
@@ -30,7 +30,7 @@ export class MCard implements MAppendableInterface {
     }
 
     if (typeof value === "string") {
-      this.cardTitle.setChild(mText(value, mTextType.span)());
+      this.cardTitle.setChild(mStaticText(value, mTextType.span)());
     }
     if (value instanceof MObject) {
       this.cardTitle.setChild(value);

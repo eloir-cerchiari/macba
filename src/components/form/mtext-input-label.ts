@@ -1,8 +1,8 @@
-import { MAppendableInterface } from "../base/m-appendable-interface";
-import { MInputText } from "../base/m-input-text";
-import { MLabel } from "../base/m-label";
-import { Signal } from "../core/signal";
-import { MBox } from "./mbox";
+import { MAppendableInterface } from "../../base/m-appendable-interface";
+import { MInputText } from "../../base/m-input-text";
+import { MLabel } from "../../base/m-label";
+import { Signal } from "../../core/signal";
+import { MBox } from "../m-box";
 
 export function mTextInputLabel(
   label: string,
