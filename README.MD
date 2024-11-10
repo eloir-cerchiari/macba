@@ -35,7 +35,7 @@ Vou tentar implementar um design focado em mobile, inspirado no Material Design.
 
 ## Até onde eu vou?
 
-Até onde eu tiver vontade. Isso é apenas um estudo de caso, mas pode acabar virando um framework pessoal.
+Até onde eu tiver vontade. Isso é apenas um estudo de caso, mas pode acabar virando um framework(éca) pessoal.
 
 ## Qual é o estado atual?
 
