@@ -39,7 +39,7 @@ Até onde eu tiver vontade. Isso é apenas um estudo de caso, mas pode acabar vi
 
 ## Qual é o estado atual?
 
-Está no início, Já é possivel fazer algumas coisas, o sistema de signals parece funcionar, embora não tenha sido testado em profundidade. O sistema de componentes está sendo implementado e as abstrações de DOM estão sendo feitas conforme necessidade.
+Está no início, Já é possivel fazer algumas coisas, o sistema de signals parece funcionar, embora não tenha sido testado em profundidade. O sistema de componentes está sendo implementado e as abstrações de DOM estão sendo feitas conforme necessidade. O sistema de roteamento está em construção, rotas principais estão funcionando, mas tem muito código para pouca coisa
 O layout ainda está fraco.
 Conceitos ainda estão se formando.
 Ainda não tem nada escrito em pedra.
