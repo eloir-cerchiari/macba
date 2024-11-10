@@ -13,7 +13,7 @@ Eu quero um programa que seja capaz de criar um site a partir de um arquivo java
 ## Como eu vou fazer?
 
 Vou abstrair alguns elementos DOM e criar algumas classes auxiliares para isso.
-Vou criar componentes que vão utilizar essas classes os quais serão a base para um sistema de TODOs.
+Vou criar componentes que vão utilizar essas classes os quais serão a base para um sistema de TO-DOs.
 
 ## Quais os elementos necessários?
 
