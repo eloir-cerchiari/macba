@@ -4,7 +4,7 @@ Sim, isso é um devaneio, um devaneio de um cara que não sabe o que quer da vid
 
 ## Qual é o problema?
 
-HTML é chato, defasado e velho. Precisamos dele? Não e sim. Não porque ele é chato, defasado e velho. Sim porque ele é a base de tudo. Não é possível rodar javascript no Browser sem o HTML. Não é possível importar os scripts sem o HTML. Depois disso ele é só um peso morto. Ele poderia sim ser o resultado final do programa.
+HTML é chato, defasado e velho. Precisamos dele? Não e sim. Não porque ele é chato, defasado e velho. Sim porque ele é a base de tudo. Não é possível rodar javascript no Browser sem o HTML. Não é possível importar os scripts sem o HTML. Depois disso ele é só um peso morto. Ele não passa do resultado final do programa.
 
 ## O que eu quero?
 
