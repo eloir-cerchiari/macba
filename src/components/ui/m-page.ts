@@ -17,7 +17,7 @@ export function mPage({ id, titleBar, mainContent }: MPageOptions): MPage {
   return new MPage({ id, titleBar, mainContent });
 }
 
-export interface MIPage extends MPage {}
+export interface MPageInterface extends MPage {}
 
 class MPage implements MAppendableInterface {
   private props!: {

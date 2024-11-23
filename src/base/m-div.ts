@@ -69,6 +69,7 @@ export class MDiv extends MObject implements MAppendableInterface {
       this.element.appendChild(child.getElement());
       return;
     }
+    return this;
   }
 
   setChild(child: HTMLElement | MObject) {

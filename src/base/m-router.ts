@@ -3,7 +3,7 @@ import { MDiv } from "./m-div";
 
 export type MRouteProps = {
   path: string;
-  component: MAppendableInterface;
+  component: () => MAppendableInterface;
   name?: string;
   childRoutes?: MRouteProps[];
 };
@@ -11,7 +11,7 @@ export class MRoute {
   private props!: {
     path: string;
     name: string;
-    component: MAppendableInterface;
+    component: () => MAppendableInterface;
     childRoutes: MRoute[];
     parts?: string[];
     params: Map<string, string>;
@@ -52,7 +52,7 @@ export class MRoute {
   }
 
   public get component(): MAppendableInterface {
-    return this.props.component;
+    return this.props.component();
   }
 
   public get childRoutes(): MRoute[] {
@@ -124,12 +124,12 @@ export class MRouter {
     this.baseElement = app;
     this.mRoute = new MRoute({
       path: this.INITIAL_PATH,
-      component: new MDiv(),
+      component: () => new MDiv(),
       childRoutes: routes,
     });
     this.currentRoute = this.mRoute;
   }
-  addRoute(route: MRoute): MRouter {
+  addRoute(route: MRouteProps): MRouter {
     this.mRoute.addChild(route);
     return this;
   }
