@@ -4,13 +4,13 @@ import { MDiv } from "../../base/m-div";
 export function row({
   id,
   childs,
-  vertical,
-  horizontal,
+  v,
+  h,
 }: {
   id?: string;
   childs?: MAppendableInterface[];
-  vertical?: string;
-  horizontal?: string;
+  v?: string;
+  h?: string;
 }) {
   const div = new MDiv(id);
   div.addClassStyle("row");
@@ -18,8 +18,8 @@ export function row({
     div.appendChild(child);
   });
 
-  if (vertical) {
-    switch (vertical) {
+  if (v) {
+    switch (v) {
       case "start":
         div.getElement().style.alignItems = "flex-start";
         break;
@@ -40,8 +40,8 @@ export function row({
         break;
     }
   }
-  if (horizontal) {
-    switch (horizontal) {
+  if (h) {
+    switch (h) {
       case "start":
         div.getElement().style.justifyContent = "flex-start";
         break;

@@ -1,5 +1,6 @@
 import { LoginPage } from "./app/pages/login/login.page.ts";
 import { MRouter } from "./base/m-router.ts";
+import { demoPage } from "./demo/demo-page.ts";
 // import { demoPage } from "./demo/demo-page.ts";
 // import { demoListItem } from "./demo/listItem.ts";
 
@@ -23,12 +24,12 @@ new MRouter(app, [
   //   component: () => demoListItem(app),
   //   childRoutes: demoChildRoutes,
   // },
-  // {
-  //   path: "/demo2",
-  //   name: "demo2",
-  //   component: () => demoPage(app),
-  //   childRoutes: demoChildRoutes,
-  // },
+  {
+    path: "/demo2",
+    name: "demo2",
+    component: () => demoPage(app),
+    // childRoutes: demoChildRoutes,
+  },
   // {
   //   path: "/demo/{teste}",
   //   name: "demo",

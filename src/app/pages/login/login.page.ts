@@ -26,14 +26,12 @@ export class LoginPage implements MAppendableInterface {
     const panel = view({
       childs: [
         row({
-          vertical: "center",
-          horizontal: "center",
+          v: "center",
+          h: "center",
           childs: [
             col({
               childs: [card],
-              sm: 12,
-              md: 6,
-              lg: 4,
+              grid: "sm-11.md-6.lg-4",
             }),
           ],
         }),

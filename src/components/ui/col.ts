@@ -12,6 +12,7 @@ type colOptions = {
   ofst?: number;
   align?: string;
   childs?: MAppendableInterface[];
+  grid?: string;
 };
 
 export function col(options?: colOptions) {
@@ -20,6 +21,9 @@ export function col(options?: colOptions) {
   options?.childs?.forEach((child) => {
     div.appendChild(child);
   });
+  if (options?.grid) {
+    gridToOptions(options.grid, options);
+  }
 
   if (options?.sm) {
     div.addClassStyle("sm-" + options.sm);
@@ -47,4 +51,13 @@ export function col(options?: colOptions) {
   }
 
   return div;
+}
+
+function gridToOptions(grid: string, options: colOptions) {
+  const gridOptions = grid.split(".");
+  gridOptions.forEach((option) => {
+    const [key, value] = option.split("-");
+    (options as any)[key] = parseInt(value);
+  });
+  return options;
 }
