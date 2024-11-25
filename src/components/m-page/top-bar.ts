@@ -1,7 +1,6 @@
-import { MAppendableInterface } from "../../../base/m-appendable-interface";
-import { MObject } from "../../../base/m-object";
-import { MStaticText, mStaticText, mTextType } from "../../../core/mtext";
-import { MBox, mBox } from "../../m-box";
+import { MAppendableInterface } from "../../base/m-appendable-interface";
+import { MStaticText, mStaticText, mTextType } from "../../core/mtext";
+import { MBox, mBox } from "../m-box";
 
 export type MPageTopBarOptions = {
   id?: string;
@@ -24,7 +23,7 @@ class MPageTopBar implements MAppendableInterface {
   protected _title!: MStaticText;
   protected _leftButton?: MAppendableInterface;
   protected _actions?: MAppendableInterface[];
-  private actionsBox: MBox;
+  private actionsBox!: MBox;
   constructor(id?: string) {
     this._box = mBox(id);
     this._box.addClassStyle("m-page__top-bar");

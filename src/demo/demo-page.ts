@@ -1,6 +1,6 @@
 import { MAppendableInterface } from "../base/m-appendable-interface";
 import { mIconButton } from "../components/form/m-icon-button";
-import { mPage } from "../components/ui/m-page";
+import { mPage } from "../components/m-page/m-page";
 import { demoForm } from "./demo-form";
 
 export function demoPage(app: HTMLDivElement): MAppendableInterface {

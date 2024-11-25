@@ -1,7 +1,7 @@
 import { MAppendableInterface } from "../../base/m-appendable-interface";
 import { MButton } from "../../base/m-button";
 import { MBox, mBox } from "../m-box";
-import { MIPageTopBar, mPageTopBar } from "./m-page/top-bar";
+import { MIPageTopBar, mPageTopBar } from "./top-bar";
 
 export type MPageOptions = {
   id?: string;
@@ -83,7 +83,7 @@ class MPage implements MAppendableInterface {
     return this.props.fullPageBox.getElement();
   }
 
-  appendChild(child: HTMLElement) {
-    this.getElement().appendChild(child);
+  appendChild(child: MAppendableInterface) {
+    this.getElement().appendChild(child.getElement());
   }
 }

@@ -3,6 +3,7 @@ import { MRouter } from "./base/m-router.ts";
 import { demoPage } from "./demo/demo-page.ts";
 // import { demoPage } from "./demo/demo-page.ts";
 // import { demoListItem } from "./demo/listItem.ts";
+const timeStart = performance.now();
 
 const app = document.getElementById("app") as HTMLDivElement;
 
@@ -37,3 +38,5 @@ new MRouter(app, [
   //   childRoutes: demoChildRoutes,
   // },
 ]).route();
+
+console.log("Time to load", performance.now() - timeStart);

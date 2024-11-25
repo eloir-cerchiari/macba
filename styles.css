@@ -327,7 +327,48 @@ select:not(:placeholder-shown)+label {
 }
 
 .m-button:hover {
-	background-color: rgba(0, 0, 0, 0.04);
+	opacity: 0.9;
+	cursor: pointer;
+
+}
+
+.m-basic-button {
+	padding: 0.8rem 1.2rem;
+	border: 0;
+	transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: transparent;
+	font-size: 1.6rem;
+	border-radius: 0.3rem;
+}
+
+.m-basic-button--primary {
+	background-color: #1976d2;
+	color: white;
+}
+
+.m-basic-button--secondary {
+	background-color: #f44336;
+	color: white;
+}
+
+.m-basic-button--success {
+	background-color: #4caf50;
+	color: white;
+}
+
+.m-basic-button--warning {
+	background-color: #ff9800;
+	color: white;
+}
+
+.m-basic-button--info {
+	background-color: #2196f3;
+	color: white;
+}
+
+.m-basic-button--danger {
+	background-color: #f44336;
+	color: white;
 }
 
 .m-icon-button {
@@ -348,5 +389,46 @@ select:not(:placeholder-shown)+label {
 
 .m-primary {
 	background-color: #1976d2;
+	color: white;
+}
+
+.m-alert {
+	display: flex;
+	padding: 1rem;
+	border-radius: 0.3rem;
+	margin: 0.3rem;
+	justify-content: space-between;
+	transition: all 0.2s linear;
+}
+
+.m-alert--removed {
+	height: 0;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+}
+
+.m-alert p {
+	font-size: 1.4rem;
+}
+
+.m-alert__close {
+	font-size: 1.6rem;
+	color: inherit;
+}
+
+.m-alert-error {
+	background-color: #f44336;
+	color: white;
+}
+
+
+.m-alert-warning {
+	background-color: #ff9800;
+	color: white;
+}
+
+.m-alert-info {
+	background-color: #2196f3;
 	color: white;
 }
