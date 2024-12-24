@@ -11,8 +11,17 @@ type colOptions = {
   col?: number;
   ofst?: number;
   align?: string;
+  dflex?: boolean;
+  gap?: number;
   childs?: MAppendableInterface[];
-  grid?: string;
+  /**
+   *
+   * string of concatenated options
+   *
+   * @example
+   * sm-11.md-6.lg-4.mdOfst-3.lgOfst-4.col-6.ofst-3.align-center
+   */
+  gstr?: string;
 };
 
 export function col(options?: colOptions) {
@@ -21,8 +30,8 @@ export function col(options?: colOptions) {
   options?.childs?.forEach((child) => {
     div.appendChild(child);
   });
-  if (options?.grid) {
-    gridToOptions(options.grid, options);
+  if (options?.gstr) {
+    gridToOptions(options.gstr, options);
   }
 
   if (options?.sm) {
@@ -48,6 +57,15 @@ export function col(options?: colOptions) {
   }
   if (options?.ofst) {
     div.addClassStyle("ofst" + options.ofst);
+  }
+  if (options?.dflex) {
+    div.addClassStyle("col-flex");
+  }
+  if (options?.align) {
+    div.addClassStyle("align-" + options.align);
+  }
+  if (options?.gap) {
+    div.addClassStyle("gap-" + options.gap);
   }
 
   return div;

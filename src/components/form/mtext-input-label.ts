@@ -12,31 +12,41 @@ export function mTextInputLabel(
   return new MTextInputLabel(label, sigText, id);
 }
 
+export function mPasswordInputLabel(
+  label: string,
+  sigText: Signal<string>,
+  id?: string
+): MTextInputLabel {
+  const input = new MTextInputLabel(label, sigText, id);
+  input.input.getElement().setAttribute("type", "password");
+  return input;
+}
+
 export class MTextInputLabel implements MAppendableInterface {
-  _input: MInputText;
-  _label: MLabel;
-  _box: MBox;
+  input: MInputText;
+  label: MLabel;
+  box: MBox;
 
   constructor(label: string, sigText: Signal<string>, id?: string) {
-    this._input = new MInputText();
-    this._input.setSignal(sigText);
-    this._input.addClassStyle("m-text-input-label-input");
-    this._input.getElement().setAttribute("placeholder", "");
+    this.input = new MInputText();
+    this.input.setSignal(sigText);
+    this.input.addClassStyle("m-text-input-label-input");
+    this.input.getElement().setAttribute("placeholder", "");
 
-    this._label = new MLabel();
-    this._label.getElement().setAttribute("for", this._input.getElement().id);
-    this._label.setValue(label);
-    this._label.addClassStyle("m-text-input-label-label");
+    this.label = new MLabel();
+    this.label.getElement().setAttribute("for", this.input.getElement().id);
+    this.label.setValue(label);
+    this.label.addClassStyle("m-text-input-label-label");
 
-    this._box = new MBox();
-    if (id) this._box.getElement().id = id;
-    this._box.addClassStyle("m-text-input-label");
+    this.box = new MBox();
+    if (id) this.box.getElement().id = id;
+    this.box.addClassStyle("m-text-input-label");
 
-    this._box.appendChild(this._input);
-    this._box.appendChild(this._label);
+    this.box.appendChild(this.input);
+    this.box.appendChild(this.label);
   }
 
   getElement() {
-    return this._box.getElement();
+    return this.box.getElement();
   }
 }

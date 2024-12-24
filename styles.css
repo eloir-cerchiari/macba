@@ -6,6 +6,45 @@
 	src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v212/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOejbd5zrDAt.woff2) format('woff2');
 }
 
+/* Define color palette */
+:root {
+	--color-primary: #1976d2;
+	--color-primary-contrast: #ffffff;
+	--color-accent: #f44336;
+	--color-accent-contrast: #ffffff;
+	--color-warn: #ff9800;
+	--color-warn-contrast: #ffffff;
+	--color-background: #ffffff;
+	--color-surface: #ffffff;
+	--color-on-primary: #ffffff;
+	--color-on-accent: #ffffff;
+	--color-on-warn: #ffffff;
+	--color-on-background: #000000;
+	--color-on-surface: #000000;
+	--color-border: #ccc;
+	--color-shadow: rgba(0, 0, 0, 0.1);
+	--color-input-focus-border: #666;
+	--color-label: #a1a1a1;
+	--color-label-focus: #666;
+
+	/* Define other variables */
+	--font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	--font-size-base: 10px;
+	--font-size-large: 1.6rem;
+	--font-size-medium: 1.34rem;
+	--font-size-small: 1rem;
+	--border-radius: 0.3rem;
+	--padding-base-vertical: 0.88rem;
+	--padding-base-horizontal: 0.7rem;
+	--padding-base: var(--padding-base-vertical) var(--padding-base-horizontal);
+	--margin-base-vertical: 1.4rem;
+	--margin-base-horizontal: 1rem;
+	--margin-base: var(--margin-base-vertical) var(--margin-base-horizontal);
+	--border-width: 1px;
+	--border-style: solid;
+	--border-color: #ccc;
+	--border: var(--border-width) var(--border-style) var(--border-color);
+}
 
 .micons {
 	font-family: 'Material Symbols Outlined';
@@ -26,11 +65,13 @@
 
 /* define base style values */
 body {
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	font-size: 10px;
+	font-family: var(--font-family);
+	font-size: var(--font-size-base);
 	display: flex;
 	margin: 0;
 	padding: 0;
+	background-color: var(--color-background);
+	color: var(--color-on-background);
 }
 
 html {
@@ -73,18 +114,18 @@ h6 {
 }
 
 p {
-	font-size: 1.6rem;
-	margin: 0.5rem;
+	font-size: 1rem;
 }
 
 .m-card {
-	margin: 0.3rem;
-	padding: 1.4rem 1rem;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+	margin: var(--margin-base);
+	padding: calc(2 * var(--padding-base-vertical)) calc(2 * var(--padding-base-horizontal));
+	border: var(--border);
+	border-radius: var(--border-radius);
+	box-shadow: 0 0 1rem var(--color-shadow);
 	display: flex;
 	flex-direction: column;
+	gap: 2rem;
 }
 
 .m-card-title {
@@ -98,12 +139,14 @@ p {
 
 .m-card-footer {
 	font-size: 1.4rem;
-	color: #666;
+	color: var(--label-focus-color);
 }
 
 .m-list {
 	display: flex;
 	flex-direction: column;
+
+
 	margin: 0.3rem;
 	padding: 0;
 }
@@ -118,7 +161,7 @@ p {
 }
 
 .m-list-item:not(:last-child) {
-	border-bottom: 1px solid #ccc;
+	border-bottom: var(--border);
 }
 
 
@@ -128,15 +171,16 @@ p {
 	display: flex;
 	flex-direction: column;
 	padding: 0rem 0;
-	margin: 1.4rem 1rem;
+	margin: var(--margin-base-horizontal) 0;
+
 }
 
 /* Estilo base para o input */
-.m-text-input-label input[type="text"] {
-	font-size: 1.34rem;
-	padding: 0.88rem 0.7rem;
-	border: 1px solid #ccc;
-	border-radius: 0.3rem;
+.m-text-input-label input:is([type="text"], [type="password"]) {
+	font-size: var(--font-size-medium);
+	padding: var(--padding-base);
+	border: var(--border);
+	border-radius: var(--border-radius);
 	transition: border-color 0.3s;
 }
 
@@ -144,7 +188,7 @@ p {
 /* Estilo para o input em foco */
 .m-text-input-label input[type="text"]:focus {
 	outline: none;
-	border: 1px solid #666;
+	border: 1px solid var(--color-input-focus-border);
 	margin: 0;
 
 }
@@ -153,7 +197,7 @@ p {
 .m-text-input-label label {
 	position: absolute;
 	top: -1.58rem;
-	font-size: 1.34rem;
+	font-size: var(--font-size-medium);
 	margin: 0.9rem 0rem;
 	left: 0.6rem;
 	transform: translateY(100%);
@@ -161,7 +205,7 @@ p {
 	padding: 0 0.3rem;
 	transition: all 0.3s;
 	pointer-events: none;
-	color: #a1a1a1;
+	color: var(--color-label);
 }
 
 /* Estilo para o label quando o input está preenchido ou em foco */
@@ -170,7 +214,7 @@ input:not(:placeholder-shown)+label {
 	top: -1.9rem;
 	left: 0.5rem;
 	font-size: 1rem;
-	color: #666;
+	color: var(--color-label-focus);
 	margin: 0;
 }
 
@@ -224,7 +268,7 @@ input:not(:placeholder-shown)+label {
 }
 
 .m-switch-input:checked {
-	background-color: blue;
+	background-color: var(--color-primary);
 }
 
 
@@ -259,10 +303,10 @@ input:not(:placeholder-shown)+label {
 
 /* Estilo base para o input */
 .m-select-lbl-select {
-	font-size: 1.34rem;
-	padding: 0.88rem 0.7rem;
-	border: 1px solid #ccc;
-	border-radius: 0.3rem;
+	font-size: var(--font-size-medium);
+	padding: var(--padding-base);
+	border: var(--border);
+	border-radius: var(--border-radius);
 	transition: border-color 0.3s;
 }
 
@@ -279,7 +323,7 @@ input:not(:placeholder-shown)+label {
 .m-select-lbl-label {
 	position: absolute;
 	top: -1.58rem;
-	font-size: 1.34rem;
+	font-size: var(--font-size-medium);
 	margin: 0.9rem 0rem;
 	left: 0.6rem;
 	transform: translateY(100%);
@@ -337,38 +381,38 @@ select:not(:placeholder-shown)+label {
 	border: 0;
 	transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
-	font-size: 1.6rem;
-	border-radius: 0.3rem;
+	font-size: var(--font-size-large);
+	border-radius: var(--border-radius);
 }
 
 .m-basic-button--primary {
-	background-color: #1976d2;
-	color: white;
+	background-color: var(--color-primary);
+	color: var(--color-primary-contrast);
 }
 
 .m-basic-button--secondary {
-	background-color: #f44336;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-accent-contrast);
 }
 
 .m-basic-button--success {
-	background-color: #4caf50;
-	color: white;
+	background-color: var(--color-primary);
+	color: var(--color-on-primary);
 }
 
 .m-basic-button--warning {
-	background-color: #ff9800;
-	color: white;
+	background-color: var(--color-warn);
+	color: var(--color-warn-contrast);
 }
 
 .m-basic-button--info {
-	background-color: #2196f3;
-	color: white;
+	background-color: var(--color-primary);
+	color: var(--color-on-primary);
 }
 
 .m-basic-button--danger {
-	background-color: #f44336;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-accent-contrast);
 }
 
 .m-icon-button {
@@ -388,15 +432,14 @@ select:not(:placeholder-shown)+label {
 
 
 .m-primary {
-	background-color: #1976d2;
+	background-color: var(--primary-color);
 	color: white;
 }
 
 .m-alert {
 	display: flex;
 	padding: 1rem;
-	border-radius: 0.3rem;
-	margin: 0.3rem;
+	border-radius: var(--border-radius);
 	justify-content: space-between;
 	transition: all 0.2s linear;
 }
@@ -408,9 +451,6 @@ select:not(:placeholder-shown)+label {
 	opacity: 0;
 }
 
-.m-alert p {
-	font-size: 1.4rem;
-}
 
 .m-alert__close {
 	font-size: 1.6rem;
@@ -418,17 +458,17 @@ select:not(:placeholder-shown)+label {
 }
 
 .m-alert-error {
-	background-color: #f44336;
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-accent-contrast);
 }
 
 
 .m-alert-warning {
-	background-color: #ff9800;
-	color: white;
+	background-color: var(--color-warn);
+	color: var(--color-warn-contrast);
 }
 
 .m-alert-info {
-	background-color: #2196f3;
-	color: white;
+	background-color: var(--color-primary);
+	color: var(--color-on-primary);
 }
